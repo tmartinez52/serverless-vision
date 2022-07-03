@@ -8,5 +8,5 @@ variable "project" {
 }
 variable "location" {
   type        = string
-  description = "The for the storage accounts"
+  description = "The for the availabiltiy zones"
 }

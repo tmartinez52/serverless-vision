@@ -8,6 +8,9 @@ resource "google_project_service" "compute" {
   }
 
   disable_dependent_services = true
+  depends_on = [
+    data.google_billing_account.billing
+  ]
 }
 resource "google_project_service" "vision" {
   project = var.project
@@ -19,6 +22,9 @@ resource "google_project_service" "vision" {
   }
 
   disable_dependent_services = true
+  depends_on = [
+    data.google_billing_account.billing
+  ]
 }
 resource "google_project_service" "build" {
   project = var.project
@@ -30,6 +36,9 @@ resource "google_project_service" "build" {
   }
 
   disable_dependent_services = true
+  depends_on = [
+    data.google_billing_account.billing
+  ]
 }
 resource "google_project_service" "functions" {
   project = var.project
@@ -41,4 +50,7 @@ resource "google_project_service" "functions" {
   }
 
   disable_dependent_services = true
+  depends_on = [
+    data.google_billing_account.billing
+  ]
 }
