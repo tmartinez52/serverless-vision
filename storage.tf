@@ -6,7 +6,8 @@ resource "google_storage_bucket" "upload" {
 
   uniform_bucket_level_access = true
   depends_on = [
-    google_project.project
+    google_project.project,
+    google_project_service.compute
   ]
 }
 resource "google_storage_bucket" "approved" {
@@ -17,7 +18,8 @@ resource "google_storage_bucket" "approved" {
 
   uniform_bucket_level_access = true
   depends_on = [
-    google_project.project
+    google_project.project,
+    google_project_service.compute
   ]
 }
 resource "google_storage_bucket" "flagged" {
@@ -28,7 +30,8 @@ resource "google_storage_bucket" "flagged" {
 
   uniform_bucket_level_access = true
   depends_on = [
-    google_project.project
+    google_project.project,
+    google_project_service.compute
   ]
 }
 resource "google_storage_bucket" "function_bucket" {
@@ -39,6 +42,7 @@ resource "google_storage_bucket" "function_bucket" {
 
   uniform_bucket_level_access = true
   depends_on = [
-    google_project.project
+    google_project.project,
+    google_project_service.compute
   ]
 }
